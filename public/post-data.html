@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/styles.css" />
+    <title>Form Data</title>
+  </head>
+  <body>
+    <header>
+      <h1>Form Submission Using Post</h1>
+    </header>
+    <form id="formdata" action="http://localhost:3000/api/forms" method="post">
+      <div>
+        <label for="team_name">name of ingredient </label>
+        <input id="ingredient" type="text" name="ingredient" value="" />
+      </div>
+      <div>
+        <label for="team_name">type </label>
+        <input id="type" type="text" name="type" value="" />
+      </div>
+      <div>
+        <label for="team_name">quantity </label>
+        <input id="amount" type="text" name="amount" value="" />
+      </div>
+      <div>
+        <label for="team_name">units of measurement </label>
+        <input id="units" type="text" name="units" value="" />
+      </div>
+      <div><input type="submit" value="create sandwich" /></div>
+    </form>
+  </body>
+
+  <script>
+    const form = document.querySelector("form");
+
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const formData = new FormData(form);
+      const formObject = {};
+      formData.forEach(function (value, key) {
+        formObject[key] = value;
+      });
+
+      var json = JSON.stringify(formObject);
+
+      const myHeaders = new Headers();
+      myHeaders.append("Content-Type", "application/json");
+
+      const raw = JSON.stringify(formObject);
+
+      const requestOptions = {
+        method: "POST",
+        headers: myHeaders,
+        body: raw,
+        redirect: "follow",
+      };
+
+      fetch("http://localhost:3000/api/forms", requestOptions)
+        .then((response) => response.text())
+        .then((result) => console.log(result))
+        .catch((error) => console.log("error", error));
+    });
+  </script>
+</html>

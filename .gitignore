@@ -1,0 +1,36 @@
+# build output
+dist
+ 
+
+# dependencies
+node_modules
+.vscode
+package-lock.json
+
+# logs & pids
+*.log
+pids
+
+# files
+.env
+ 
+
+# test output
+
+#docs
+docs
+ 
+
+# vscode settings
+.vscode
+
+# examples
+ 
+
+# Vercel
+
+
+#Firebase
+
+
+ 
