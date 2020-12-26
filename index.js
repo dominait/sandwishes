@@ -1,18 +1,24 @@
+const dotenv = require('dotenv') 
 const express = require('express')
-const cors = require('cors')
-const sandWishRoutes = require('./routes/site-routes')
-const routes = require('./routes/routes.js')
 const path = require('path')
-const expressLayouts = require('express-ejs-layouts')
-// const bodyParser = require('body-parser') not required now can use multer do do all requests
+const cors = require('cors')
 const multer = require('multer');
+const expressLayouts = require('express-ejs-layouts')
+ 
+
+
+const sandWishRoutes = require('./routes/site-routes.js')
+const routes = require('./routes/routes.js')
+// const bodyParser = require('body-parser') not required now can use multer do do all requests
 const products = require('./data/things')
 
 
  
 const upload = multer();
 const app = express();
-const port = 3000;
+dotenv.config()
+const PORT = process.env.PORT || 5000
+ 
 
 app.use(cors())
 app.use(expressLayouts)
@@ -48,8 +54,8 @@ app.use('/api', routes())
 app.use((req, res, next)=>{
     res.status(404).render('404', {pageTitle:'Page Not Found', message:"woops you caught us...fixing the problem"})
   })
-app.listen(port, ()=> {
-    console.log(`Your Server Is Running On---------> http://localhost:${port}`)
+app.listen(PORT, ()=> {
+    console.log(`Your Server Is Running On---------> http://localhost:${PORT}`)
 })
 
  
