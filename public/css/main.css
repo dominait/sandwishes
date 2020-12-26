@@ -1,3 +1,11 @@
+html {
+  box-sizing: border-box;
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
 html,
 body,
 p,
@@ -44,14 +52,7 @@ textarea {
   margin: 0;
   font-size:100%;
 }
-html {
-  box-sizing: border-box;
-}
-*,
-*::before,
-*::after {
-  box-sizing: inherit;
-}
+
 img,
 video {
   height: auto;
@@ -112,6 +113,7 @@ border-radius: 8px;
 padding:0.7rem 2rem;
 }
 nav{
+  
  padding: 1rem;
     box-shadow: rgba(23, 32, 38, 0.08) 0px 2px 8px 0px, rgba(23, 32, 38, 0.06) 0px 2px 4px 0px;
 
@@ -129,9 +131,24 @@ a, a:link, a:visited, a:hover, a:active{
   color:#0d142f;
 }
 button{
-  background-color: #e1ff4e;
-  color:#0d142f;  margin: 1.5rem 2rem;
+  
 }
 .logo{
   width: 3.25rem;
+}
+.options{
+  width: 880px;
+  margin:0 auto 0;
+}
+.options a{
+ display: inline-block;
+ 
+font-size: 1.5rem;
+border-radius: 8px;
+padding:0.7rem 2rem;
+  background:white;
+  border:none;
+  box-shadow: 0 0 3px 0 #575964;
+  color:#0d142f;  
+  margin: 1rem;
 }
