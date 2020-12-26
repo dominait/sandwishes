@@ -85,7 +85,6 @@ body {
   }
   body{
      margin:0;
-     background:#e1ff4e;
      color:#0d142f;
 }
 
@@ -112,11 +111,27 @@ border:none;
 border-radius: 8px;
 padding:0.7rem 2rem;
 }
-nav ul{
-  display:flex;
-  justify-content: center;
+nav{
+ padding: 1rem;
+    box-shadow: rgba(23, 32, 38, 0.08) 0px 2px 8px 0px, rgba(23, 32, 38, 0.06) 0px 2px 4px 0px;
 
 }
-nav li{
-  margin: 1.5rem 2rem;
+nav ul{
+  display:flex;
+  justify-content: space-between
+
+}
+  li{
+margin:0 2rem;
+}
+a, a:link, a:visited, a:hover, a:active{
+  text-decoration:none;
+  color:#0d142f;
+}
+button{
+  background-color: #e1ff4e;
+  color:#0d142f;  margin: 1.5rem 2rem;
+}
+.logo{
+  width: 3.25rem;
 }
